@@ -1,16 +1,18 @@
 import { create } from "zustand";
 
 interface CourseState {
-  current_lesson_id: number;
+  current_lesson_title: string;
 }
 
 interface CourseActions {
-  setCurrentLessonId: (lesson_id: number) => void;
+  setCurrentLesson: (lesson_title: string) => void;
 }
 
-export const useCourseStore = create<CourseState & CourseActions>()((set) => ({
-  current_lesson_id: 1,
-  setCurrentLessonId(lesson_id) {
-    set(() => ({ current_lesson_id: lesson_id }));
-  },
-}));
+export const useCourseStore = create<CourseState & CourseActions>()(
+  (set, get) => ({
+    current_lesson_title: "",
+    setCurrentLesson(lesson_title) {
+      set(() => ({ current_lesson_title: lesson_title }));
+    },
+  })
+);

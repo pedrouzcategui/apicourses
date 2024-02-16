@@ -22,7 +22,7 @@ export default function RootLayout({
                     <div className="col">
                         <CourseSidebar />
                     </div>
-                    <div className="col-span-4 flex flex-col p-5 bg-slate-950">
+                    <div className="col-span-4 flex flex-col p-5 bg-gray-950">
                         {children}
                     </div>
                 </div>

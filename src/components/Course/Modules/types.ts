@@ -13,5 +13,5 @@ export interface TLesson {
   title: string;
   completed?: boolean;
   type: "video" | "quiz" | "text";
-  duration_in_minutes: number;
+  duration_in_minutes?: number;
 }
