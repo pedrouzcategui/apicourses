@@ -1,3 +1,9 @@
+export interface TCourse {
+  name: string;
+  completion: number;
+  modules: TModule[];
+}
+
 export interface TModule {
   name: string;
   lessons: TLesson[];
