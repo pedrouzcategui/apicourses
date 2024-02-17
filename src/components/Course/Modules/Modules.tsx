@@ -34,7 +34,7 @@ export const Modules = () => {
 export const Module = ({ name, lessons, id }: ModuleProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const classNames = clsx(
-        "flex min-h-20 justify-between items-center text-white cursor-pointer p-4",
+        "flex flex-col min-h-20 justify-between text-white cursor-pointer p-4",
         {
             "bg-slate-950": isOpen,
         }
@@ -42,13 +42,18 @@ export const Module = ({ name, lessons, id }: ModuleProps) => {
     return (
         <div className="border-b-2 border-terciary-color">
             <div className={classNames} onClick={() => setIsOpen(!isOpen)}>
-                <span className="font-bold">
-                    #{id} - {name}
-                </span>
-                <span>{isOpen ? <FaArrowUp /> : <FaArrowDown />}</span>
-            </div>
+                <div className="flex justify-between items-center">
+                    <div>
+                        <span className="block font-bold">
+                            #{id} - {name}
+                        </span>
+                        <span className="text-sm"> 0/{lessons.length} Completed</span>
+                    </div>
+                    <span>{isOpen ? <FaArrowUp /> : <FaArrowDown />}</span>
+                </div>
+            </div >
             {isOpen && <Lessons lessons={lessons} />}
-        </div>
+        </div >
     );
 };
 
@@ -85,7 +90,7 @@ const Lesson = ({
             <div className="flex gap-2 items-center">
                 <span>{IconHandler(type)}</span>
                 {
-                    <span>{duration_in_minutes} {type === 'video' ? 'Minutes' : type}</span>
+                    <span>{duration_in_minutes} {lessonTypeHandler(type)}</span>
                 }
             </div>
         </div>
@@ -100,5 +105,18 @@ function IconHandler(type: TLesson["type"]) {
             return <FaVideo />;
         default:
             return <FaFileAlt />;
+    }
+}
+
+function lessonTypeHandler(type: TLesson["type"]) {
+    switch (type) {
+        case 'quiz':
+            return 'Quiz'
+        case 'video':
+            return 'Minutes'
+        case 'text':
+            return 'Text'
+        default:
+            return 'Text'
     }
 }
