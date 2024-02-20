@@ -45,7 +45,7 @@ export const Module = ({ name, lessons, id }: ModuleProps) => {
                 <div className="flex justify-between items-center">
                     <div>
                         <span className="block font-bold">
-                            #{id} - {name}
+                            #{id}: {name}
                         </span>
                         <span className="text-sm"> 0/{lessons.length} Completed</span>
                     </div>
