@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { TLesson, TModule } from "./types";
-import { MODULES_SAMPLE_DATA } from "./sample-data";
+import { TLesson, TModule } from "@/types";
+import { MODULES_SAMPLE_DATA } from "../../../utils/modules-sample-data";
 import {
     FaPencilRuler,
     FaVideo,

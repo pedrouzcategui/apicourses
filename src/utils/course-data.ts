@@ -1,4 +1,4 @@
-import type { CourseCardProps as Course } from "@/types";
+import type { CourseCardProps as Course } from "../types";
 
 export const COURSES: Course[] = [
   {
@@ -32,6 +32,7 @@ export const COURSES: Course[] = [
     title: "Facebook Ads for Developers",
     description: "Learn everything you need to know about Ads with this course",
     price: 200,
+    image_url: "META_DEVELOPERS_COURSE.png",
     slug: "facebook-ads-for-developers",
     difficulty: "Advanced",
   },

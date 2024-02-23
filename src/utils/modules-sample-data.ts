@@ -1,4 +1,4 @@
-import { TModule } from "./types";
+import { TModule } from "@/types";
 
 export const MODULES_SAMPLE_DATA: TModule[] = [
   {

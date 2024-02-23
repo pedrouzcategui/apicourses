@@ -8,3 +8,7 @@ export * from "./Course/CourseSidebar/CourseSidebar";
 export * from "./Course/CourseTitle/Title";
 
 export * from "./Course/CourseCard/CourseCard";
+
+export * from "./Course/CourseCardWithDetails/CourseCardWithDetails";
+
+export * from "./Course/CourseContentDropdown/CourseContentDropdown";
