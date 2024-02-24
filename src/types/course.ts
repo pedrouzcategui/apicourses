@@ -1,18 +1,30 @@
+type CourseDifficulty = "Begginer" | "Intermediate" | "Advanced";
+type CourseCategory = "Marketing" | "Tech";
+type LessonType = "video" | "quiz" | "text";
+
 export interface CourseCardProps {
-  slug: string;
   title: string;
+  slug: string;
   description: string;
   price: number;
   image_url?: string;
   mini_course?: boolean;
-  difficulty: "Begginer" | "Intermediate" | "Advanced";
-  category?: "Marketing" | "Tech";
+  difficulty: CourseDifficulty;
+  category?: CourseCategory;
+  published?: boolean;
 }
 
 export interface TCourse {
-  name: string;
-  completion: number;
-  modules: TModule[];
+  title: string;
+  slug: string;
+  description: string;
+  price: number;
+  image_url?: string;
+  mini_course?: boolean;
+  difficulty: CourseDifficulty;
+  category?: CourseCategory;
+  published?: boolean;
+  modules?: TModule[];
 }
 
 export interface TModule {
@@ -23,6 +35,6 @@ export interface TModule {
 export interface TLesson {
   title: string;
   completed?: boolean;
-  type: "video" | "quiz" | "text";
+  type: LessonType;
   duration_in_minutes?: number;
 }

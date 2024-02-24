@@ -6,6 +6,20 @@ export async function findCourseBySlug(slug: string) {
     where: {
       slug: slug,
     },
+    include: {
+      modules: {
+        orderBy: {
+          number: "asc",
+        },
+        include: {
+          lessons: {
+            orderBy: {
+              number: "asc",
+            },
+          },
+        },
+      },
+    },
   });
   return course;
 }

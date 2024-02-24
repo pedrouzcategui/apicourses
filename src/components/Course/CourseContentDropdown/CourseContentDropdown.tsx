@@ -1,22 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import { TLesson, TModule } from "@/types/course";
+import {
+    FaFileAlt,
+    FaPencilRuler,
+    FaVideo,
+    FaArrowDown,
+    FaArrowUp,
+    FaLock,
+} from "react-icons/fa";
 
 interface CourseContentDropdownProps {
-    modules: TModule[];
+    modules: ModuleProps[];
 }
 
 interface ModuleProps {
-    id: number;
+    id: string;
+    number: number;
     name: string;
-    lessons: TLesson[];
+    lessons: LessonProps[];
 }
 
 interface LessonProps {
+    id: string;
     name: string;
-    type: TLesson["type"];
-    duration?: number;
+    type: string;
+    duration_in_minutes?: number;
+    isFree: boolean;
 }
 
 export function CourseContentDropdown({ modules }: CourseContentDropdownProps) {
@@ -27,36 +37,39 @@ export function CourseContentDropdown({ modules }: CourseContentDropdownProps) {
         <div>
             {displayModules.map((module, i) => (
                 <Module
-                    id={i + 1}
+                    id={module.id}
+                    number={module.number}
                     key={`${module.name}-${i}`}
                     name={module.name}
                     lessons={module.lessons}
                 />
             ))}
-            <button onClick={() => setIsSeeMore(!isSeeMore)}>
+            <button className="mt-4" onClick={() => setIsSeeMore(!isSeeMore)}>
                 {isSeeMore ? "See Less" : "See More"}
             </button>
         </div>
     );
 }
 
-function Module({ id, name, lessons }: ModuleProps) {
+function Module({ id, number, name, lessons }: ModuleProps) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     return (
-        <div
-            onClick={() => setIsOpen(!isOpen)}
-            className="w-full px-2 py-2 hover:bg-slate-300"
-        >
-            <span>
-                Seccion {id}: {name}
-            </span>
+        <div onClick={() => setIsOpen(!isOpen)} className="w-full">
+            <div className="border-b-2 border-slate-900 flex items-center justify-between py-4 transition-all cursor-pointer">
+                <span>
+                    Seccion {number}: {name}
+                </span>
+                {isOpen ? <FaArrowUp /> : <FaArrowDown />}
+            </div>
             {isOpen && (
                 <ul>
                     {lessons.map((lesson, i) => (
                         <Lesson
-                            key={`${lesson.title}-${i}`}
-                            name={lesson.title}
-                            duration={lesson.duration_in_minutes}
+                            id={lesson.id}
+                            isFree={lesson.isFree}
+                            key={`${lesson.name}-${i}`}
+                            name={lesson.name}
+                            duration_in_minutes={0}
                             type={lesson.type}
                         />
                     ))}
@@ -66,6 +79,28 @@ function Module({ id, name, lessons }: ModuleProps) {
     );
 }
 
-function Lesson({ name, type }: LessonProps) {
-    return <li>{type} - {name}</li>;
+function Lesson({ name, type, isFree = false }: LessonProps) {
+    return (
+        <li className="py-4 flex items-center gap-2 hover:bg-white border-b-2 border-slate-300">
+            {IconHandler(type)} {name}{" "}
+            {isFree ? (
+                <span className="border-2 border-green-500 text-green-600 px-4">
+                    Watch Free
+                </span>
+            ) : (
+                <FaLock />
+            )}
+        </li>
+    );
+}
+
+function IconHandler(type: string) {
+    switch (type) {
+        case "quiz":
+            return <FaPencilRuler />;
+        case "video":
+            return <FaVideo />;
+        default:
+            return <FaFileAlt />;
+    }
 }

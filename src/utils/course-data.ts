@@ -1,23 +1,25 @@
-import type { CourseCardProps as Course } from "../types";
+import type { TCourse } from "../types";
 
-export const COURSES: Course[] = [
+export const COURSES: TCourse[] = [
   {
     title: "Zapier",
     description:
-      "Learn everything you need to know about Zapier with this course",
-    price: 99,
+      "Embrace the legendary power of no-code automation and systems with Zapier.",
+    price: 50,
     slug: "zapier",
     image_url: "ZAPIER_COURSE.png",
     difficulty: "Begginer",
+    published: true,
   },
   {
     title: "Make",
     description:
-      "Learn everything you need to know about Make with this course",
+      "Embrace the ultimate power of the best low-code automation and systems with Make.",
     price: 99,
     slug: "make",
     image_url: "MAKE_COURSE.png",
     difficulty: "Begginer",
+    published: true,
   },
   {
     title: "Slack APIs and Workflows",
@@ -27,6 +29,7 @@ export const COURSES: Course[] = [
     image_url: "SLACK_AUTOMATIONS_COURSE.png",
     slug: "slack-automations-course",
     difficulty: "Intermediate",
+    published: true,
   },
   {
     title: "Facebook Ads for Developers",
@@ -35,180 +38,417 @@ export const COURSES: Course[] = [
     image_url: "META_DEVELOPERS_COURSE.png",
     slug: "facebook-ads-for-developers",
     difficulty: "Advanced",
+    published: true,
   },
   {
-    title: "HTTP and APIs",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 99,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Intermediate",
-  },
-  {
-    title: "GHL OAuth 2.0",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 10,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Intermediate",
-  },
-  {
-    title: "OAuth 2.0",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 10,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "GHL Marketplace Apps Development",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 200,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Advanced",
-  },
-  {
-    title: "Stripe and Ecommerce Integrations",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 200,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Intermediate",
-  },
-  {
-    title: "JavaScript for Automations",
-    description: "Learn everything you need to know about Ads with this course",
+    title: "GoHighLevel Zero to Hero",
+    description:
+      "Learn everything you need to know about HighLevel with this course",
     price: 50,
-    slug: "facebook-ads-for-developers",
+    image_url: "HIGH_LEVEL_COURSE.png",
+    slug: "high-level-zero-to-hero",
     difficulty: "Begginer",
-  },
-  {
-    title: "Python for Automations",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 50,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "RoboCorp for Automations",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 50,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Intermediate",
-  },
-  {
-    title: "AWS",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Intermediate",
-  },
-  {
-    title: "Call Center GHL",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Intermediate",
-  },
-  {
-    title: "ReTool",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "SEO",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Linux Server Management",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "ClickUp APIs",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Supabase",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Airtable",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Email Marketing",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Docker",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 100,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "FileSystems and Storage for Node.js",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 0,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "ChatGPT",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 0,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Dall3",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 0,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Sora",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 0,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Unfiltered AI",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 0,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Chatbot with ChatGPT",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 0,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
-  },
-  {
-    title: "Facebook Ads",
-    description: "Learn everything you need to know about Ads with this course",
-    price: 0,
-    slug: "facebook-ads-for-developers",
-    difficulty: "Begginer",
+    published: true,
+    modules: [
+      {
+        name: "Welcome to the course",
+        lessons: [
+          {
+            title: "Intro to Go High Level",
+            type: "video",
+            duration_in_minutes: 10,
+            completed: true,
+          },
+          {
+            title: "How to take advantage of this course",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Course Update notes",
+            type: "text",
+            completed: true,
+          },
+        ],
+      },
+      {
+        name: "HighLevel Tour",
+        lessons: [
+          {
+            title: "Dashboards",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Conversations",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Calendars",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Opportunities",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Payments",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Marketing",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Automation",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Sites",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Memberships",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Reputation",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "Reporting",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+          {
+            title: "App Marketplace",
+            type: "video",
+            duration_in_minutes: 3,
+            completed: true,
+          },
+        ],
+      },
+      {
+        name: "HighLevel Settings",
+        lessons: [
+          {
+            title: "Introduction to Setttings",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Business Profile",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Company Billing",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "My Staff",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Pipelines",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Calendars",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Conversation AI",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Email Services",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Phone Numbers",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "WhatsApp",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Reputation Management",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Custom Fields",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Custom Values",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Manage Scoring",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Domains",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Media",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "URL Redirects",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Integrations",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Conversation Providers",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Tags",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Labs",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Audit Logs",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "Sites",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Landing Pages vs Sites vs Blogs",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Exploring the UI",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "Forms",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Forms vs Surveys",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Creating our first form",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "Trigger Links",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "Workflows",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "Snapshots",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "Email Marketing",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Initial Configuration",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "Branded Email Domains",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "Phone Numbers",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+          {
+            title: "A2P 10DLC",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "(NEW) Call Center",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "(NEW) Common Automation Scenarios and Solutions",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "(NEW) AI Booking Bot",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+      {
+        name: "(NEW) Intro to Automations with Zapier and Make with HighLevel",
+        lessons: [
+          {
+            title: "Introduction to the section",
+            type: "video",
+            completed: false,
+            duration_in_minutes: 5,
+          },
+        ],
+      },
+    ],
   },
 ];

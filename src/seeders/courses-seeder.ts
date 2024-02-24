@@ -5,18 +5,49 @@ import { COURSES } from "../utils/course-data";
 async function main() {
   // Courses Seeder
   await prisma.course.deleteMany();
-  const coursesFormatted = COURSES.map((course: TCourse) => {
-    return {
-      title: course.title,
-      price: course.price,
-      description: course.description,
-      slug: course.slug,
-    };
+  await prisma.module.deleteMany();
+  await prisma.lesson.deleteMany();
+
+  COURSES.map(async (course) => {
+    const { title, description, slug, published, price, image_url, modules } =
+      course;
+    const dbCourse = await prisma.course.create({
+      data: {
+        title,
+        description,
+        slug,
+        published,
+        price,
+        image_url,
+      },
+    });
+
+    if (modules) {
+      modules.map(async (module, i) => {
+        const { name, lessons } = module;
+        const dbModule = await prisma.module.create({
+          data: {
+            number: i + 1,
+            courseId: dbCourse.id,
+            name,
+          },
+        });
+
+        const lessonsData = lessons.map((lesson, i) => ({
+          number: i + 1,
+          moduleId: dbModule.id,
+          name: lesson.title,
+          type: lesson.type,
+        }));
+
+        await prisma.lesson.createMany({
+          data: lessonsData,
+        });
+      });
+    }
   });
 
-  await prisma.course.createMany({
-    data: coursesFormatted,
-  });
+  console.log("Seeded Successfully");
 }
 
 main();
