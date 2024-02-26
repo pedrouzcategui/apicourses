@@ -12,3 +12,7 @@ export * from "./Course/CourseCard/CourseCard";
 export * from "./Course/CourseCardWithDetails/CourseCardWithDetails";
 
 export * from "./Course/CourseContentDropdown/CourseContentDropdown";
+
+export * from "./Menu/Menu";
+
+export * from "./Login/LoginForm/LoginForm";

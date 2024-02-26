@@ -1,5 +1,5 @@
 import { getPublishedCourses } from "@/actions";
-import { CourseCard, } from "@/components";
+import { CourseCard, Menu } from "@/components";
 
 export default async function Home() {
 
@@ -7,6 +7,7 @@ export default async function Home() {
 
   return (
     <div className="w-4/5 mx-auto">
+      <Menu />
       <h1 className="text-3xl font-semibold text-center my-4">Learn Automations</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
         {
