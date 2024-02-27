@@ -16,3 +16,4 @@ export * from "./Course/CourseContentDropdown/CourseContentDropdown";
 export * from "./Menu/Menu";
 
 export * from "./Login/LoginForm/LoginForm";
+export * from "./SignUp/SignUpForm";
