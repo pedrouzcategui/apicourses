@@ -38,3 +38,7 @@
   "Nginx",
   "Chatbots",
   "Manychat",
+  "ZOD: $5",
+  "tRPC: $5",
+  "Sales for introverts: $99",
+  "ShadCN: $99",

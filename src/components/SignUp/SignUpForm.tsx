@@ -1,7 +1,9 @@
 'use client'
-import { register } from "@/actions";
+import { register as registerUser } from "@/actions";
 import Link from "next/link";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { FormSuccess, FormError } from "@/components";
 
 interface SignUpFormInputs {
     name: string;
@@ -13,14 +15,20 @@ interface SignUpFormInputs {
 export function SignUpForm() {
 
     const { register, handleSubmit } = useForm<SignUpFormInputs>();
+    const [error, setError] = useState<string | undefined>("")
+    const [success, setSuccess] = useState<string | undefined>("")
 
-    const onSubmit: SubmitHandler<SignUpFormInputs> = (data) => {
-        console.log(data);
+    const onSubmit: SubmitHandler<SignUpFormInputs> = async (data) => {
+        const res = await registerUser(data);
+        setError(res.error);
+        setSuccess(res.success)
     }
 
     return (
         <div className="text-center">
             <h1 className="text-center text-2xl mb-4 font-bold">Sign Up</h1>
+            <FormSuccess message={success} />
+            <FormError message={error} />
             <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full gap-2">
                 <div className="text-left mb-2">
                     <label className="block mb-2 font-semibold" htmlFor="name">Full Name</label>

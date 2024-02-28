@@ -17,3 +17,6 @@ export * from "./Menu/Menu";
 
 export * from "./Login/LoginForm/LoginForm";
 export * from "./SignUp/SignUpForm";
+
+export * from "./FormError";
+export * from "./FormSuccess";
