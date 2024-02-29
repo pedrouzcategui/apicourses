@@ -42,3 +42,4 @@
   "tRPC: $5",
   "Sales for introverts: $99",
   "ShadCN: $99",
+  "JWT and JS authentication: Free",
