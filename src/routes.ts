@@ -10,7 +10,7 @@ export const publicRoutes = ["/", "/courses"];
  * These routes do require authentication.
  * @type {string[]}
  */
-export const authRoutes = ["login", "signup"];
+export const authRoutes = ["login", "signup", "forgot-password"];
 
 export const apiAuthPrefix = "/api/auth";
 
